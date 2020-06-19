@@ -12,7 +12,7 @@
 		<img class="img" align="middle" src="${story.imageStory}"
 			alt="Los Angeles" width="auto" height="500" align="middle">
 	</div>
-	<h3>${colectionStory.nameCollectionStory}</h1>
+	<h3>${colectionStory.nameCollectionStory}</h3>
 	<p>${colectionStory.contentCollectionStory}</p>
 </body>
 </html>

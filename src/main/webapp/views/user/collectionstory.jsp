@@ -8,8 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="<c:url value='/tap-truyen'/>" id="formSubmit"
-		method="get">
+	<form action="<c:url value='/tap-truyen'/>" id="formSubmit" method="get">
 		<input type="hidden" value="${story.idStory}" id="idstory"
 			name="idStory" /> <input type="hidden" value=""
 			id="idcollectionstory" name="idCollectionStory" />

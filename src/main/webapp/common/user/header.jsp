@@ -5,8 +5,7 @@
 	class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
 	id="mainNav">
 	<div class="container">
-		<a class="navbar-brand js-scroll-trigger" href="#page-top">Start
-			Bootstrap</a>
+		<a class="navbar-brand js-scroll-trigger" href="<c:url value="/trang-chu"/>">Story Sky</a>
 		<button
 			class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
 			type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -16,7 +15,7 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item mx-0 mx-lg-1"><a
+				<%-- <li class="nav-item mx-0 mx-lg-1"><a
 					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
 					href="#portfolio">Portfolio</a></li>
 				<li class="nav-item mx-0 mx-lg-1"><a
@@ -24,7 +23,17 @@
 					href="#about">About</a></li>
 				<li class="nav-item mx-0 mx-lg-1"><a
 					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-					href="#contact">Contact</a></li>
+					href="#contact">Đăng nhập</a></li>--%>
+				<c:if test="${not empty USERMODEL}">
+					<li class="nav-item"><a class="nav-link" href='#'>Wellcome,
+							${USERMODEL.fullname}</a></li>
+					<li class="nav-item"><a class="nav-link"
+					type="post"	href='<c:url value="/dang-xuat?action=logout"/>'>Thoát</a></li>
+				</c:if>
+				<c:if test="${empty USERMODEL}">
+					<li class="nav-item"><a class="nav-link"
+						href='<c:url value="/dang-nhap?action=login"/>'>Đăng nhập</a></li>
+				</c:if>
 			</ul>
 		</div>
 	</div>
