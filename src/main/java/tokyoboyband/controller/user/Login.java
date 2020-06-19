@@ -18,7 +18,7 @@ import tokyoboyband.utils.SessionUtil;
 /**
  * Servlet implementation class Login
  */
-@WebServlet(urlPatterns = { "/dang-nhap", "/dang-xuat" })
+@WebServlet(urlPatterns = { "/dang-nhap", "/dang-xuat", "/admin" })
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Inject
