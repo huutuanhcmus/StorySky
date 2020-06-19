@@ -38,4 +38,14 @@
     <servlet-name>UserCollectionStoryController</servlet-name>
     <url-pattern>/UserCollectionStoryController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserDetailCollectionStory</display-name>
+    <servlet-name>UserDetailCollectionStory</servlet-name>
+    <servlet-class>tokyoboyband.controller.user.UserDetailCollectionStory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserDetailCollectionStory</servlet-name>
+    <url-pattern>/UserDetailCollectionStory</url-pattern>
+  </servlet-mapping>
 </web-app>

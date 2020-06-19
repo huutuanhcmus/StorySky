@@ -6,4 +6,5 @@ import tokyoboyband.model.CollectionStoryModel;
 
 public interface ICollectionStoryDao extends IGenericDao<CollectionStoryModel> {
 	ArrayList<CollectionStoryModel> findAllStoryByStory(Long id);
+	ArrayList<CollectionStoryModel> findOneCollectionStoryByStoryAndCollectionStory(Long idStory, Long idCollectionStory);
 }

@@ -17,4 +17,9 @@ public class CollectionStoryService implements ICollectionStoryService {
 		return collectionStoryDao.findAllStoryByStory(id);
 	}
 
+	@Override
+	public CollectionStoryModel findOneCollectionStoryByStoryAndCollectionStory(Long idStory, Long idCollectionStory) {
+		return collectionStoryDao.findOneCollectionStoryByStoryAndCollectionStory(idStory, idCollectionStory).get(0);
+	}
+
 }

@@ -14,4 +14,10 @@ public class CollectionStory extends AbstractDAO<CollectionStoryModel> implement
 		return query(sql, new CollectionStoryMapper(), id);
 	}
 
+	@Override
+	public ArrayList<CollectionStoryModel> findOneCollectionStoryByStoryAndCollectionStory(Long idStory, Long idCollectionStory) {
+		String sql = "select * from collectionstory where idstory = ? and idcollectionstory = ?";
+		return query(sql, new CollectionStoryMapper(), idStory, idCollectionStory);
+	}
+
 }
