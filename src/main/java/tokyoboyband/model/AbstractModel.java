@@ -1,22 +1,25 @@
 package tokyoboyband.model;
 
-import java.security.Timestamp;
+import java.util.ArrayList;
 
-public class AbstractModel {
-	private Timestamp createdDate;
-	private Timestamp modifiedDate;
+public abstract class AbstractModel<T> {
+	private java.sql.Timestamp createdDate;
+	private java.sql.Timestamp modifiedDate;
 	private String createdBy;
 	private String modifiedBy;
-	public Timestamp getCreatedDate() {
+	
+	private ArrayList<T> listResult = new ArrayList<T>();
+	
+	public java.sql.Timestamp getCreatedDate() {
 		return createdDate;
 	}
-	public void setCreatedDate(Timestamp createdDate) {
-		this.createdDate = createdDate;
+	public void setCreatedDate(java.sql.Timestamp timestamp) {
+		this.createdDate = timestamp;
 	}
-	public Timestamp getModifiedDate() {
+	public java.sql.Timestamp getModifiedDate() {
 		return modifiedDate;
 	}
-	public void setModifiedDate(Timestamp modifiedDate) {
+	public void setModifiedDate(java.sql.Timestamp modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
 	public String getCreatedBy() {
@@ -30,6 +33,12 @@ public class AbstractModel {
 	}
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
+	}
+	public ArrayList<T> getListResult() {
+		return listResult;
+	}
+	public void setListResult(ArrayList<T> listResult) {
+		this.listResult = listResult;
 	}
 	
 	

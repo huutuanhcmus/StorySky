@@ -1,14 +1,23 @@
 package tokyoboyband.model;
 
-public class CategoryModel extends AbstractModel {
+import java.util.ArrayList;
+
+public class CategoryModel extends AbstractModel<CategoryModel> {
 	private Long idCategory;
 	private String nameCategory;
 	private String codeCategory;
+	private ArrayList<StoryModel> listStory = new ArrayList<StoryModel>();
 	public Long getIdCategory() {
 		return idCategory;
 	}
 	public void setIdCategory(Long idCategory) {
 		this.idCategory = idCategory;
+	}
+	public ArrayList<StoryModel> getListStory() {
+		return listStory;
+	}
+	public void setListStory(ArrayList<StoryModel> listStory) {
+		this.listStory = listStory;
 	}
 	public String getNameCategory() {
 		return nameCategory;

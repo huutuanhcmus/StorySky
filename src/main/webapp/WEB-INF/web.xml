@@ -28,4 +28,14 @@
     <servlet-name>UserHomeController</servlet-name>
     <url-pattern>/UserHomeController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserCollectionStoryController</display-name>
+    <servlet-name>UserCollectionStoryController</servlet-name>
+    <servlet-class>tokyoboyband.controller.user.UserCollectionStoryController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserCollectionStoryController</servlet-name>
+    <url-pattern>/UserCollectionStoryController</url-pattern>
+  </servlet-mapping>
 </web-app>
