@@ -6,4 +6,5 @@ import tokyoboyband.model.StoryModel;
 
 public interface IStoryService {
 	ArrayList<StoryModel> findAllStoryByCategory(Long id);
+	StoryModel findOneStoryById(Long id);
 }

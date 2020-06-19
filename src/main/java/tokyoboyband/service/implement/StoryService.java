@@ -16,4 +16,9 @@ public class StoryService implements IStoryService {
 		return storyDao.findAllStoryByCategory(id);
 	}
 
+	@Override
+	public StoryModel findOneStoryById(Long id) {
+		return storyDao.findOneStoryById(id).get(0);
+	}
+
 }

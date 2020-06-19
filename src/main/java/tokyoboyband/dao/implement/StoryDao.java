@@ -13,4 +13,9 @@ public class StoryDao extends AbstractDAO<StoryModel> implements IStoryDao {
 		return query(sql, new StoryMapper(), id);
 	}
 
+	@Override
+	public ArrayList<StoryModel> findOneStoryById(Long id) {
+		String sql = "select * from story where idstory = ?;";
+		return query(sql, new StoryMapper(), id);
+	}
 }

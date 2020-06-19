@@ -1,6 +1,6 @@
 package tokyoboyband.model;
 
-public class CollectionStory extends AbstractModel<CollectionStory> {
+public class CollectionStoryModel extends AbstractModel<CollectionStoryModel> {
 	private Long idStory;
 	private Long idCollectionStory;
 	private String nameCollectionStory;

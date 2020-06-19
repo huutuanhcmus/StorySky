@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import tokyoboyband.model.CategoryModel;
-import tokyoboyband.model.StoryModel;
 import tokyoboyband.service.ICategoryService;
-import tokyoboyband.service.IStoryService;
 
 /**
  * Servlet implementation class UserHomeController

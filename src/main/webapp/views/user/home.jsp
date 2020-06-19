@@ -8,8 +8,8 @@
 <title>Trang chủ AAAAAAA</title>
 </head>
 <body>
-	<form action="<c:url value='/story'/>" id="formSubmit" method="get">
-		<input type="hidden" value="" id="idstory" name="idstory" />
+	<form action="<c:url value='/truyen'/>" id="formSubmit" method="get">
+		<input type="hidden" value="" id="idstory" name="idStory" />
 		<c:forEach var="item" items="${categoryList.listResult}">
 			<h1>${item.nameCategory}</h1>
 			<div id="${item.codeCategory}" class="carousel slide"
@@ -27,9 +27,9 @@
 				<div class="carousel-inner">
 					<c:forEach var="item1" items="${item.listStory}" varStatus="count">
 						<c:if test="${count.count <= 1}">
-							<div class="carousel-item active">
-								<img onclick="image(${item1.idStory})" src="${item1.imageStory}" alt="Los Angeles" width="1100"
-									height="500">
+							<div class="carousel-item active" align="middle">
+								<img class = "img" onclick="image(${item1.idStory})" src="${item1.imageStory}"
+									alt="Los Angeles" width="auto" height="500" align="middle">
 								<div class="carousel-caption">
 									<h5>${item1.nameStory}</h5>
 									<p>${item1.introduceStory}</p>
@@ -38,9 +38,10 @@
 							</div>
 						</c:if>
 						<c:if test="${count.count > 1}">
-							<div class="carousel-item">
-								<img onclick="image(${item1.idStory})" src="${item1.imageStory}"
-									alt="Los Angeles" width="1100" height="500">
+							<div class="carousel-item" align="middle">
+								<img  class = "img" onclick="image(${item1.idStory})"
+									src="${item1.imageStory}" alt="Los Angeles" width="auto"
+									height="500" align="middle">
 								<div class="carousel-caption">
 									<h5>${item1.nameStory}</h5>
 									<p>${item1.introduceStory}</p>
