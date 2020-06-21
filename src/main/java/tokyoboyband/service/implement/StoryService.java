@@ -49,4 +49,9 @@ public class StoryService implements IStoryService {
 			return -1;
 	}
 
+	@Override
+	public ArrayList<StoryModel> findAllStoryByName(String nameStory) {
+		return storyDao.findAllStoryByName(nameStory);
+	}
+
 }

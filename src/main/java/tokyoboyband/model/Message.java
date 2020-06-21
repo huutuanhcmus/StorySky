@@ -1,8 +1,9 @@
 package tokyoboyband.model;
 
 public class Message {
-	public String message;
-	public String alert;
+	private String message;
+	private String alert;
+	private Long idStory;
 	public String getMessage() {
 		return message;
 	}
@@ -24,5 +25,11 @@ public class Message {
 	public void danger(String message) {
 		alert = "danger";
 		this.message = message;
+	}
+	public Long getIdStory() {
+		return idStory;
+	}
+	public void setIdStory(Long idStory) {
+		this.idStory = idStory;
 	}
 }

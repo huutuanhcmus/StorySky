@@ -11,4 +11,5 @@ public interface IStoryDao extends IGenericDao<StoryModel> {
 	StoryModel updateStory(StoryModel storyModel);
 	StoryModel addNewStory(StoryModel storyModel);
 	int DeleteStory(Long idStory);
+	ArrayList<StoryModel> findAllStoryByName(String nameStory);
 }

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import tokyoboyband.model.Message;
 import tokyoboyband.model.UserModel;
 import tokyoboyband.service.IUserService;
 import tokyoboyband.utils.FormUtil;
@@ -62,8 +63,9 @@ public class Login extends HttpServlet {
 				SessionUtil.getInstance().putValue(request, "USERMODEL", user);
 				response.sendRedirect(request.getContextPath() + "/trang-chu");
 			} else {
-				request.setAttribute("message", "Tài khoảng hoặc mật khẩu không đúng");
-				request.setAttribute("alert", "danger");
+				Message message = new Message();
+				message.danger("Tài khoảng hoặc mật khẩu không đúng");
+				request.setAttribute("message", message);
 				// response.sendRedirect(request.getContextPath()+"/dang-nhap?action=login&message=username_password_invalid&alert=danger");
 				RequestDispatcher rd = request.getRequestDispatcher("/views/login.jsp");
 				rd.forward(request, response);

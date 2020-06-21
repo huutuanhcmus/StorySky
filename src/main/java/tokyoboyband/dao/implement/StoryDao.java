@@ -51,4 +51,10 @@ public class StoryDao extends AbstractDAO<StoryModel> implements IStoryDao {
 		else
 			return -1;
 	}
+
+	@Override
+	public ArrayList<StoryModel> findAllStoryByName(String nameStory) {
+		String sql = "select * from story where namestory like '%"+nameStory+"%';";
+		return query(sql, new StoryMapper());
+	}
 }

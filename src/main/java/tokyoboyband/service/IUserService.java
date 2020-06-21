@@ -4,4 +4,5 @@ import tokyoboyband.model.UserModel;
 
 public interface IUserService {
 	UserModel findUserByUsernameAndPassWord(String username, String password);
+	UserModel newUser(UserModel user);
 }

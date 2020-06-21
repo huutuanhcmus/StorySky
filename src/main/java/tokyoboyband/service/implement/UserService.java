@@ -20,4 +20,10 @@ public class UserService implements IUserService {
 		return null;
 	}
 
+	@Override
+	public UserModel newUser(UserModel user) {
+		return userDao.newUser(user);
+	}
+
+	
 }

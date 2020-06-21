@@ -5,6 +5,7 @@
 <c:url var ="AddURL" value="/them-truyen"/>
 <c:url var ="ThisURL" value="/ke-sach"/>
 <c:url var ="DelURL" value="/xoa-truyen"/>
+<c:url var ="CollectionStoryURL" value="/danh-sach-tap-truyen"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,7 @@
 		<tbody>
 			<c:forEach var="item" items="${story.listResult}">
 				<tr>
-					<th scope="col">${item.nameStory}</th>
+					<th onclick="collectionstory(${item.idStory})" scope="col">${item.nameStory}</th>
 					<th scope="col">
 						<i onclick="change(${item.idStory})" data-toggle="tooltip"title="Chỉnh sửa" class="material-icons">system_update_alt</i>
 						<i onclick="deleteStory(${item.idStory})" id="delete" data-toggle="tooltip" title="Xóa truyện" class="material-icons">delete</i> 
@@ -38,6 +39,9 @@
 		</tbody>
 	</table>
 	<script>
+		function collectionstory(idStory) {
+			window.location.href = "${CollectionStoryURL}?idStory="+idStory;
+		}
 		function change(idStory) {
 			window.location.href = "${NewURL}?idStory="+idStory;
 		}

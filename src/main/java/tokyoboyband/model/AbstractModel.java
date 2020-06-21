@@ -7,11 +7,18 @@ public abstract class AbstractModel<T> {
 	private java.sql.Timestamp modifiedDate;
 	private String createdBy;
 	private String modifiedBy;
+	private String search;
 	
 	private ArrayList<T> listResult = new ArrayList<T>();
 	
 	public java.sql.Timestamp getCreatedDate() {
 		return createdDate;
+	}
+	public String getSearch() {
+		return search;
+	}
+	public void setSearch(String search) {
+		this.search = search;
 	}
 	public void setCreatedDate(java.sql.Timestamp timestamp) {
 		this.createdDate = timestamp;

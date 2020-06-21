@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>
+<c:url var="SearchURL" value="/tim-kiem" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +26,8 @@
 	rel="stylesheet">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="<c:url value='/template/ckeditor/ckeditor.js' />"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/19.1.1/classic/ckeditor.js"></script>
 </head>
 <body>
 	<!-- header -->
@@ -80,5 +83,11 @@
 		src="<c:url value='/template/user/assets/mail/contact_me.js' />"></script>
 	<!-- Core theme JS-->
 	<script src="<c:url value='/template/user/js/scripts.js' />"></script>
+	<script>
+	function btnsearch(idStory) {
+		var data = {};
+		window.location.href = "${SearchURL}?search="+$('#searchform').val();
+	}
+	</script>
 </body>
 </html>

@@ -26,4 +26,31 @@ public class CollectionStory extends AbstractDAO<CollectionStoryModel> implement
 		return updatedQuery(sql, idStory);
 	}
 
+	@Override
+	public CollectionStoryModel addNewCollectionStory(CollectionStoryModel storyModel) {
+		String sql = "INSERT INTO collectionstory (idstory, namecollectionstory, contentcollectionstory, createddate, createdby) VALUES (?, ?, ?, ?, ?);";
+		if(updatedQuery(sql, storyModel.getIdStory(), storyModel.getNameCollectionStory(), storyModel.getContentCollectionStory(), storyModel.getCreatedDate(), storyModel.getCreatedBy())==1)
+			return storyModel;
+		else
+			return null;
+	}
+
+	@Override
+	public CollectionStoryModel updateCollectionStory(CollectionStoryModel storyModel) {
+		String sql = "UPDATE collectionstory SET namecollectionstory = ?, contentcollectionstory = ?, modifieddate = ?, modifiedby = ? WHERE (idcollectionstory = ?) and (idstory = ?);";
+		if(updatedQuery(sql, storyModel.getNameCollectionStory(), storyModel.getContentCollectionStory(), storyModel.getModifiedDate(), storyModel.getModifiedBy(), storyModel.getIdCollectionStory(), storyModel.getIdStory())==1)
+			return storyModel;
+		else
+			return null;
+	}
+
+	@Override
+	public int DeleteOneCollectionStory(Long idStory, Long idCollectionStory) {
+		String sql = "DELETE FROM collectionstory WHERE (idcollectionstory = ?) and (idstory = ?);";
+		if (updatedQuery(sql, idCollectionStory, idStory) == 1)
+			return 1;
+		else
+			return -1;
+	}
+
 }

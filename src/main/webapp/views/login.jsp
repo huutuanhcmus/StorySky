@@ -13,8 +13,8 @@
 			<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
 				<div class="card card-signin my-5">
 					<div class="card-body">
-						<c:if test="${not empty message}">
-							<div class="alert alert-${alert}">${message}</div>
+						<c:if test="${not empty message.message}">
+							<div class="alert alert-${message.alert}">${message.message}</div>
 						</c:if>
 						<h5 class="card-title text-center">Đăng nhập</h5>
 						<form action="<c:url value='/dang-nhap'/>" id="formSubmit"
@@ -23,7 +23,7 @@
 							<div class="form-label-group">
 								<input type="text" value="" name="username"
 									id="inputEmail" class="form-control"
-									placeholder="Địa chỉ email" required autofocus> <label
+									placeholder="Tên tài khoảng" required autofocus> <label
 									for="inputEmail">Tên tài khoảng</label>
 							</div>
 
@@ -34,22 +34,11 @@
 							</div>
 
 							<div class="custom-control custom-checkbox mb-3">
-								<input type="checkbox" class="custom-control-input"
-									id="customCheck1"> <label class="custom-control-label"
-									for="customCheck1">Ghi nhớ mật khẩu</label>
+								<a href="<c:url value="/dang-ky-tai-khoang"/>">Đăng ký tài khoảng</a>
 							</div>
 							<button class="btn btn-lg btn-primary btn-block text-uppercase"
 								type="submit">Đăng nhập</button>
 							<hr class="my-4">
-							<button class="btn btn-lg btn-google btn-block text-uppercase"
-								type="submit">
-								<i class="fab fa-google mr-2"></i> Đăng nhập bằng Google
-							</button>
-							<button class="btn btn-lg btn-facebook btn-block text-uppercase"
-								type="submit">
-								<i class="fab fa-facebook-f mr-2"></i> Đăng nhập bằng Google
-								Facebook
-							</button>
 						</form>
 					</div>
 				</div>

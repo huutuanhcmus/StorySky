@@ -116,4 +116,44 @@
     <servlet-name>UserColectionStoryshelf</servlet-name>
     <url-pattern>/UserColectionStoryshelf</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserUpdatedCollectionSoryAPI</display-name>
+    <servlet-name>UserUpdatedCollectionSoryAPI</servlet-name>
+    <servlet-class>tokyoboyband.api.user.UserUpdatedCollectionSoryAPI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserUpdatedCollectionSoryAPI</servlet-name>
+    <url-pattern>/UserUpdatedCollectionSoryAPI</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserUpdatedCollectionStory</display-name>
+    <servlet-name>UserUpdatedCollectionStory</servlet-name>
+    <servlet-class>tokyoboyband.controller.user.UserUpdatedCollectionStory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserUpdatedCollectionStory</servlet-name>
+    <url-pattern>/UserUpdatedCollectionStory</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Search</display-name>
+    <servlet-name>Search</servlet-name>
+    <servlet-class>tokyoboyband.controller.user.Search</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Search</servlet-name>
+    <url-pattern>/Search</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Register</display-name>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>tokyoboyband.controller.user.Register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
 </web-app>
