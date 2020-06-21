@@ -41,11 +41,20 @@ public class AuthorizationFilter implements Filter {
             } else {
                 response.sendRedirect(request.getContextPath()+"/dang-nhap?action=login&message=not_login&alert=danger");
             }
+        }
+        else if (url.startsWith(request.getContextPath() + "/ke-sach") || url.startsWith(request.getContextPath() + "/danh-sach-tap-truyen")|| url.startsWith(request.getContextPath() + "/chinh-sua-tap-truyen") || url.startsWith(request.getContextPath() + "/chinh-sua")|| url.startsWith(request.getContextPath() + "/xoa-truyen")|| url.startsWith(request.getContextPath() + "/them-tap-truyen")|| url.startsWith(request.getContextPath() + "/xoa-tap-truyen")) {
+            UserModel model = (UserModel) SessionUtil.getInstance().getValue(request, "USERMODEL");
+            if (model != null) {
+                    filterChain.doFilter(servletRequest, servletResponse);
+                
+            } else {
+                response.sendRedirect(request.getContextPath()+"/dang-nhap?action=login&message=not_login&alert=danger");
+            }
         } else {
             filterChain.doFilter(servletRequest, servletResponse);
         }
+        
 	}
-
 	@Override
 	public void destroy() {
 		
