@@ -3,8 +3,6 @@ package tokyoboyband.dao.implement;
 import java.util.ArrayList;
 
 import tokyoboyband.dao.IUserDao;
-import tokyoboyband.mapper.IRowMapper;
-import tokyoboyband.mapper.StoryMapper;
 import tokyoboyband.mapper.UserMapper;
 import tokyoboyband.model.UserModel;
 

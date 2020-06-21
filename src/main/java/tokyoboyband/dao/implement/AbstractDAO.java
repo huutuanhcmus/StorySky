@@ -25,6 +25,33 @@ public abstract class AbstractDAO<T> implements IGenericDao<T> {
 		}
 	}
 	
+	public int updatedQuery(String sql, Object... parameters) {
+		Connection connection = getConnection();
+		PreparedStatement statement = null;
+		connection = getConnection();
+		try {
+			statement = connection.prepareStatement(sql);
+			setParameter(statement, parameters);
+			System.out.print(statement.getResultSetType());
+			statement.executeUpdate();
+			return 1;
+		} catch (SQLException e) {
+			return 0;
+		}finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+	
+	
 	public ArrayList<T> query(String sql, IRowMapper<T> rowMapper, Object... parameters) {
 		ArrayList<T> results = new ArrayList<T>();
 		Connection connection = getConnection();
@@ -34,6 +61,7 @@ public abstract class AbstractDAO<T> implements IGenericDao<T> {
 		try {
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
+			System.out.print(statement.getResultSetType());
 			resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				results.add(rowMapper.mapRow(resultSet));

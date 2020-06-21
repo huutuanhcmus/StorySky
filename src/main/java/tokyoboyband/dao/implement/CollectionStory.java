@@ -20,4 +20,10 @@ public class CollectionStory extends AbstractDAO<CollectionStoryModel> implement
 		return query(sql, new CollectionStoryMapper(), idStory, idCollectionStory);
 	}
 
+	@Override
+	public int DeleteCollectionStory(Long idStory) {
+		String sql = "DELETE FROM collectionstory WHERE (idstory = ?);";
+		return updatedQuery(sql, idStory);
+	}
+
 }
