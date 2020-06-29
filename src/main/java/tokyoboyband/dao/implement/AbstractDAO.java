@@ -30,6 +30,7 @@ public abstract class AbstractDAO<T> implements IGenericDao<T> {
 		PreparedStatement statement = null;
 		connection = getConnection();
 		try {
+			connection.setAutoCommit(false);
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
 			System.out.print(statement.getResultSetType());
@@ -40,6 +41,7 @@ public abstract class AbstractDAO<T> implements IGenericDao<T> {
 		}finally {
 			try {
 				if (connection != null) {
+					connection.rollback();
 					connection.close();
 				}
 				if (statement != null) {
@@ -54,11 +56,12 @@ public abstract class AbstractDAO<T> implements IGenericDao<T> {
 	
 	public ArrayList<T> query(String sql, IRowMapper<T> rowMapper, Object... parameters) {
 		ArrayList<T> results = new ArrayList<T>();
-		Connection connection = getConnection();
+		Connection connection = getConnection();	
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
-		connection = getConnection();
 		try {
+			connection.setAutoCommit(false);
+			connection = getConnection();
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
 			System.out.print(statement.getResultSetType());
@@ -72,6 +75,7 @@ public abstract class AbstractDAO<T> implements IGenericDao<T> {
 		}finally {
 			try {
 				if (connection != null) {
+					connection.rollback();
 					connection.close();
 				}
 				if (statement != null) {
